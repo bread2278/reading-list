@@ -1,6 +1,10 @@
 /* ============================================================
    Reading List — style.css  (feature/dark-mode branch)
-   Commit 1 of 3: Add dark mode toggle and CSS theme variables
+   Commit 3 of 3 — BAD COMMIT: "Tweak dark mode contrast"
+
+   BUG: --color-text in dark mode was accidentally set to the
+   same value as --color-bg, making all text invisible.
+   This is the commit students need to revert.
    ============================================================ */
 
 /* ── Reset & base ────────────────────────────────────────── */
@@ -35,7 +39,7 @@
 [data-theme="dark"] {
   --color-bg:           #0f172a;
   --color-card:         #1e293b;
-  --color-text:         #f1f5f9;
+  --color-text:         #0f172a;  /* BUG: copied wrong value — matches --color-bg, text invisible */
   --color-muted:        #94a3b8;
   --color-border:       #334155;
   --color-primary:      #818cf8;
