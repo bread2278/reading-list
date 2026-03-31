@@ -1,5 +1,6 @@
 // ============================================================
-// Reading List — app.js
+// Reading List — app.js  (feature/dark-mode branch)
+// Commits 1 & 2: dark mode toggle + three books added
 // ============================================================
 
 // ── Your reading list ─────────────────────────────────────────
@@ -19,6 +20,9 @@ const books = [
   { id: 3, title: "The Design of Everyday Things", author: "Don Norman",                 status: "to-read", category: "Design"           },
   { id: 4, title: "Deep Work",                     author: "Cal Newport",                status: "to-read", category: "Self-Development" },
   { id: 5, title: "A Mind for Numbers",            author: "Barbara Oakley",             status: "done",    category: "Self-Development" },
+  { id: 6, title: "Thinking, Fast and Slow",       author: "Daniel Kahneman",            status: "to-read", category: "Self-Development" },
+  { id: 7, title: "A Philosophy of Software Design", author: "John Ousterhout",          status: "reading", category: "Engineering"      },
+  { id: 8, title: "The Lean Startup",              author: "Eric Ries",                  status: "done",    category: "Business"         },
 ];
 
 // ── State ─────────────────────────────────────────────────────
@@ -69,6 +73,22 @@ document.querySelectorAll('.filter-btn').forEach((btn) => {
     currentFilter = btn.dataset.filter;
     renderBooks();
   });
+});
+
+// ── Dark mode ─────────────────────────────────────────────────
+
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme  = localStorage.getItem('theme') || 'light';
+
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next    = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
 });
 
 // ── Helpers ───────────────────────────────────────────────────
