@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="app-header">
+      <div class="app-header-inner">
+        <div class="app-title">
+          <h1>Reading List</h1>
+          <span class="book-count" id="book-count"></span>
+        </div>
+
+        <!-- ✏️ Add your feature controls here (search box, sort buttons, etc.) -->
+        <div class="header-controls" id="header-controls"></div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="to-read">To Read</button>
+        <button class="filter-btn" data-filter="reading">Reading</button>
+        <button class="filter-btn" data-filter="done">Done</button>
+      </div>
+    </header>
+
+    <main>
+      <ul class="book-list" id="book-list"></ul>
+      <p class="empty-state" id="empty-state">No books match this filter.</p>
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
