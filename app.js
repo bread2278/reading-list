@@ -19,6 +19,9 @@ const books = [
   { id: 3, title: "The Design of Everyday Things", author: "Don Norman",                 status: "to-read", category: "Design"           },
   { id: 4, title: "Deep Work",                     author: "Cal Newport",                status: "to-read", category: "Self-Development" },
   { id: 5, title: "A Mind for Numbers",            author: "Barbara Oakley",             status: "done",    category: "Self-Development" },
+  { id: 6, title: "Rich Dad Poor Dad",             author: "Robert T. Kiyosaki",         status: "to-read", category: "Finance"          },
+  { id: 7, title: "The Art of War",                author: "Sun Tzu",                    status: "to-read", category: "Strategy"         },
+  { id: 8, title: "Michael Vey",                   author: "Richard Paul Evans",         status: "to-read", category: "Fiction"          },
 ];
 
 // ── State ─────────────────────────────────────────────────────
